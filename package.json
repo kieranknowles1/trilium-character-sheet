@@ -4,7 +4,7 @@
   "description": "This is a repository based on my [NixOS Configuration](https://github.com/kieranknowles1/nixcfg).",
   "main": "index.js",
   "scripts": {
-    "schemas": "typescript-json-schema tsconfig.json Data > DataSchema.json",
+    "schemas": "typescript-json-schema --required --noExtraProps --defaultNumberType integer tsconfig.json Character > CharacterSchema.json",
     "build": "tsc",
     "pack": "npm run schemas && npm run build && tpack"
   },

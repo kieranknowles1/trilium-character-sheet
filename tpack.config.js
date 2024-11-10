@@ -37,7 +37,7 @@ module.exports = {
             },
             {
                 title: "Schema",
-                file: "DataSchema.json",
+                file: "CharacterSchema.json",
             },
             createRenderNote("Character Sheet", "static/sheet.json", true),
             createRenderNote("Demo", "static/demo.json", false),

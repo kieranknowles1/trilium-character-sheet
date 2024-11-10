@@ -1,5 +1,7 @@
 # Trilium Character Sheet
 
+[GitHub](https://github.com/kieranknowles1/trilium-character-sheet)
+
 [Triilium](https://github.com/TriliumNext/Notes/) plugin for displaying DND character sheets.
 Very much a work in progress and mainly done as a learning exercise. Don't expect it to compete
 with DND Beyond.
