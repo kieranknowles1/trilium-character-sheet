@@ -4,5 +4,6 @@
         "module": "CommonJS",
         "esModuleInterop": true,
         "target": "ESNext",
+        "strict": true,
     }
 }

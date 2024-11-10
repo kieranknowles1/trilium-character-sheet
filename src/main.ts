@@ -35,7 +35,7 @@ function nullCheck<T>(query: string, value: Optional<T>): value is T {
     return true
 }
 
-function displayValue<T>(query: string, value: Optional<T>) {
+function displayValue<T extends Object>(query: string, value: Optional<T>) {
     if (!nullCheck(query, value)) return
     $(query).text(value.toString())
 }
