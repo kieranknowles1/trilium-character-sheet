@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "pack": "tpack"
+    "pack": "npm run build && tpack"
   },
   "author": "",
   "license": "ISC",
