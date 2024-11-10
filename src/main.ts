@@ -3,7 +3,7 @@ import { FrontendAPI } from "trilium/frontend";
 // The API object is available in the global scope
 declare const api: FrontendAPI;
 
-type Optional<T> = T | null | undefined
+type Optional<T> = T | undefined
 function isValue<T>(value: Optional<T>): value is T {
     return value !== null && value !== undefined
 }

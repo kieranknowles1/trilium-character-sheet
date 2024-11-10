@@ -20,4 +20,5 @@ with DND Beyond.
 Create a new note from the **Character Sheet** template, and fill in the details in the **Data**
 subnote. The note will then display your character sheet.
 
-Any missing fields will be highlighted in red.
+Any missing fields will be highlighted in red. See the **Schema** sub note for the expected
+structure of a character sheet.

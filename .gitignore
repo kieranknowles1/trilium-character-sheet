@@ -1,5 +1,6 @@
-# Nix build outputs
-result
 node_modules
+
+# Build outputs
 src/**/*.js
+DataSchema.json
 *.zip

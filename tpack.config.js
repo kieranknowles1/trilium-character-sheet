@@ -29,10 +29,15 @@ module.exports = {
                 children: [
                     {
                         // This script is executed when opening the note
+                        title: "main.js",
                         file: "src/main.js",
                         env: "frontend",
                     }
                 ]
+            },
+            {
+                title: "Schema",
+                file: "DataSchema.json",
             },
             createRenderNote("Character Sheet", "static/sheet.json", true),
             createRenderNote("Demo", "static/demo.json", false),
