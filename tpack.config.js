@@ -3,9 +3,9 @@ function createRenderNote(title, src, isTemplate) {
         title,
         type: "render",
         attributes: isTemplate ? {
-            "~renderNote": "static/main.html", "#template": ""
+            "~renderNote": "static/index.html", "#template": ""
         } : {
-            "~renderNote": "static/main.html"
+            "~renderNote": "static/index.html"
         },
         children: [
             {
@@ -24,13 +24,13 @@ module.exports = {
         children: [
             {
                 // Data that the template renders from
-                file: "static/main.html",
+                file: "static/index.html",
                 title: "HTML",
                 children: [
                     {
                         // This script is executed when opening the note
-                        title: "main.js",
-                        file: "src/main.js",
+                        title: "index.js",
+                        file: "src/index.js",
                         env: "frontend",
                     }
                 ]

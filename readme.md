@@ -14,8 +14,8 @@ with DND Beyond.
 ## Updating
 
 1. Build the plugin using `npm run pack`
-2. Replace the contents of `Trilium Character Sheet/HTML` with `./static/main.html`
-3. Replace the contents of `Trilium Character Sheet/HTML/main.js` with `./src/main.js`
+2. Replace the contents of `Trilium Character Sheet/HTML` with `./static/index.html`
+3. Replace the contents of `Trilium Character Sheet/HTML/index.js` with `./src/index.js`
 
 ## Usage
 

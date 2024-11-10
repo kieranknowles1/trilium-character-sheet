@@ -2,7 +2,6 @@
   "name": "trilium-character-sheet",
   "version": "1.0.0",
   "description": "This is a repository based on my [NixOS Configuration](https://github.com/kieranknowles1/nixcfg).",
-  "main": "index.js",
   "scripts": {
     "schemas": "typescript-json-schema --required --noExtraProps --defaultNumberType integer tsconfig.json Character > CharacterSchema.json",
     "build": "tsc",
