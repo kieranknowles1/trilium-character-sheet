@@ -1,6 +1,5 @@
 node_modules
 
 # Build outputs
-src/**/*.js
-CharacterSchema.json
-*.zip
+dist/
+dist.zip

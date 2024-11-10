@@ -30,14 +30,14 @@ module.exports = {
                     {
                         // This script is executed when opening the note
                         title: "index.js",
-                        file: "src/index.js",
+                        file: "dist/bundle.js",
                         env: "frontend",
                     }
                 ]
             },
             {
                 title: "Schema",
-                file: "CharacterSchema.json",
+                file: "dist/CharacterSchema.json",
             },
             createRenderNote("Character Sheet", "static/sheet.json", true),
             createRenderNote("Demo", "static/demo.json", false),
