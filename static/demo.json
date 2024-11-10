@@ -1,0 +1,13 @@
+{
+    "name": "Dave",
+    "class": "Rogue",
+    "level": 12,
+    "attributes": {
+        "strength": 10,
+        "dexterity": 18,
+        "constitution": 14,
+        "intelligence": 13,
+        "wisdom": 9,
+        "charisma": 16
+    }
+}
