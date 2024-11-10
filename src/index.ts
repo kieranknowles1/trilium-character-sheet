@@ -1,5 +1,9 @@
 import { FrontendAPI } from "trilium/frontend";
 
+import {
+    SKILL_ATTRIBUTES
+} from './data'
+
 // The API object is available in the global scope
 declare const api: FrontendAPI;
 
@@ -12,26 +16,6 @@ function isNotNull<T>(name: string, value: Optional<T>): value is T {
     return !isNull
 }
 
-const SKILL_ATTRIBUTES = {
-    'Acrobatics': 'dexterity',
-    'Animal Handling': 'wisdom',
-    'Arcana': 'intelligence',
-    'Athletics': 'strength',
-    'Deception': 'charisma',
-    'History': 'intelligence',
-    'Insight': 'wisdom',
-    'Intimidation': 'charisma',
-    'Investigation': 'intelligence',
-    'Medicine': 'wisdom',
-    'Nature': 'intelligence',
-    'Perception': 'wisdom',
-    'Performance': 'charisma',
-    'Persuasion': 'charisma',
-    'Religion': 'intelligence',
-    'Sleight of Hand': 'dexterity',
-    'Stealth': 'dexterity',
-    'Survival': 'wisdom',
-}
 type Skill = keyof typeof SKILL_ATTRIBUTES
 
 interface Attributes {
@@ -127,7 +111,11 @@ async function render(): Promise<void> {
     const json: Partial<Character> = JSON.parse(data)
 
     displayValue('#name', json.name)
-    displayValue('#class', json.class)
+    if (isNotNull('class', json.class)) {
+        // Wikidot can be slow, but the site that shall not be named is ad infested
+        const wikiUrl = `https://dnd5e.wikidot.com/${json.class.toLowerCase()}`
+        $('#class').text(json.class).attr('href', wikiUrl)
+    }
     displayValue('#level', json.level)
 
     if (isNotNull('attributes', json.attributes)) {
