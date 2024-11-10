@@ -9,6 +9,12 @@ with DND Beyond.
 1. Build the plugin using `npm run pack`
 2. Import `dist.zip` into Trilium, making sure to disable **Safe Import**
 
+## Updating
+
+1. Build the plugin using `npm run pack`
+2. Replace the contents of `Trilium Character Sheet/HTML` with `./static/main.html`
+3. Replace the contents of `Trilium Character Sheet/HTML/main.js` with `./src/main.js`
+
 ## Usage
 
 Create a new note from the **Character Sheet** template, and fill in the details in the **Data**
