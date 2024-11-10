@@ -1,7 +1,17 @@
 {
+    "$schema": "../CharacterSchema.json",
     "name": "Dave",
     "class": "Rogue",
     "level": 12,
+    "expertises": [
+        "Stealth",
+        "Sleight of Hand",
+        "Acrobatics"
+    ],
+    "proficiencies": [
+        "Persuasion",
+        "Deception"
+    ],
     "attributes": {
         "strength": 10,
         "dexterity": 18,
