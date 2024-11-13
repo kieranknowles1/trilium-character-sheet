@@ -26,6 +26,7 @@ interface Attributes {
     wisdom: number,
     charisma: number,
 }
+type Attribute = keyof Attributes
 
 interface Character {
     $schema: string,
@@ -37,6 +38,7 @@ interface Character {
     proficiencies: Skill[],
     /** Skills the character has expertise in, gaining double proficiency bonus */
     expertises: Skill[],
+    saveProficiencies: Attribute[],
 }
 
 /**
@@ -95,12 +97,29 @@ function displaySkills(level: number, proficiencies: Skill[], expertises: Skill[
 
         table.append(`
             <tr>
-                <td>${skill} (${attribute})</td>
+                <td>${skill} (${attribute.substring(0, 3)})</td>
                 <td>${bonus}</td>
             </tr>
         `)
     }
+}
 
+function displaySaves(level: number, saves: Attribute[], attributes: Attributes) {
+    const bonus = getProficiencyBonus(level)
+    const table = $('#saving-throws')
+    for (const attribute of Object.keys(attributes)) {
+        const modifier = getAttributeModifier(attributes[attribute])
+
+        var save = getAttributeModifier(attributes[attribute])
+        if (saves.includes(attribute as Attribute)) save += bonus
+
+        table.append(`
+            <tr>
+                <td>${attribute}</td>
+                <td>${save}</td>
+            </tr>
+        `)
+    }
 }
 
 async function render(): Promise<void> {
@@ -130,10 +149,17 @@ async function render(): Promise<void> {
     if (
         isNotNull('level', json.level) &&
         isNotNull('proficiencies', json.proficiencies) &&
-        isNotNull('expertises', json.expertises) &&
         isNotNull('attributes', json.attributes)
     ) {
-        displaySkills(json.level, json.proficiencies, json.expertises, json.attributes)
+        displaySkills(json.level, json.proficiencies, json.expertises ?? [], json.attributes)
+    }
+
+    if (
+        isNotNull('level', json.level) &&
+        isNotNull('saveProficiencies', json.saveProficiencies) &&
+        isNotNull('attributes', json.attributes)
+    ) {
+        displaySaves(json.level, json.saveProficiencies, json.attributes)
     }
 }
 render()
