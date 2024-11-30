@@ -1,12 +1,16 @@
 function createRenderNote(title, src, isTemplate) {
+    var attributes = {
+        "~renderNote": "static/index.html",
+        "#iconClass": "bx bx-face"
+    }
+    if (isTemplate) {
+        attributes["#template"] = ""
+    }
+
     return {
         title,
         type: "render",
-        attributes: isTemplate ? {
-            "~renderNote": "static/index.html", "#template": ""
-        } : {
-            "~renderNote": "static/index.html"
-        },
+        attributes,
         children: [
             {
                 title: "Data",
@@ -30,14 +34,14 @@ module.exports = {
                     {
                         // This script is executed when opening the note
                         title: "index.js",
-                        file: "dist/bundle.js",
+                        file: "dist/character-sheet.umd.js",
                         env: "frontend",
                     }
                 ]
             },
             {
                 title: "Schema",
-                file: "dist/CharacterSchema.json",
+                file: "build/CharacterSchema.json",
             },
             createRenderNote("Character Sheet", "static/sheet.json", true),
             createRenderNote("Demo", "static/demo.json", false),

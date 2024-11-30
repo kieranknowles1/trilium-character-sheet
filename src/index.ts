@@ -2,7 +2,7 @@ import { FrontendAPI } from "trilium/frontend";
 
 import {
     SKILL_ATTRIBUTES
-} from './data'
+} from './data.ts'
 
 // The API object is available in the global scope
 declare const api: FrontendAPI;
@@ -101,12 +101,12 @@ function displaySkills(level: number, proficiencies: Skill[], expertises: Skill[
         if (isProficient) proficiency += ' *'
         else if (isExpertise) proficiency += ' **'
 
-        table.append(`
-            <tr>
-                <td>${skill} (${attribute.substring(0, 3)}${proficiency})</td>
-                <td>${bonus}</td>
-            </tr>
-        `)
+        table.append(
+            `<tr>` +
+                `<td>${skill} (${attribute.substring(0, 3)}${proficiency})</td>` +
+                `<td>${bonus}</td>` +
+            `</tr>`
+        )
     }
 }
 
@@ -119,12 +119,12 @@ function displaySaves(level: number, saves: Attribute[], attributes: Attributes)
         var save = getAttributeModifier(attributes[attribute])
         if (saves.includes(attribute as Attribute)) save += bonus
 
-        table.append(`
-            <tr>
-                <td>${attribute}</td>
-                <td>${save}</td>
-            </tr>
-        `)
+        table.append(
+            `<tr>` +
+                `<td>${attribute}</td>` +
+                `<td>${save}</td>` +
+            `</tr>`
+        )
     }
 }
 
