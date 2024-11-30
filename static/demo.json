@@ -1,5 +1,5 @@
 {
-    "$schema": "../dist/CharacterSchema.json",
+    "$schema": "../build/CharacterSchema.json",
     "name": "Dave",
     "class": "Rogue",
     "alignment": "Chaotic Good",
@@ -12,6 +12,10 @@
     "proficiencies": [
         "Persuasion",
         "Deception"
+    ],
+    "saveProficiencies": [
+        "dexterity",
+        "intelligence"
     ],
     "attributes": {
         "strength": 10,

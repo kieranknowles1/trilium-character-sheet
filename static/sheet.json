@@ -1,3 +1,3 @@
 {
-    "$schema": "../dist/CharacterSchema.json"
+    "$schema": "../build/CharacterSchema.json"
 }
