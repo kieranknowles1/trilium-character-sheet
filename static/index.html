@@ -5,8 +5,15 @@
     <title>Character Sheet</title>
 </head>
 <body>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+    <p style="display: none;" id="missing-field">One or more fields are missing. See the bottom of the page for more information.</p>
     <h1 id="name">Name</h1>
-    <h2><a id="class">Class</a>, level <span id="level">Level</span></h2>
+    <h2><a id="class">Class</a>, level <span id="level">Level</span>. <span id="alignment">Alignment</span></h2>
 
     <section>
         <h3>Attributes</h3>

@@ -1,7 +1,8 @@
 {
-    "$schema": "../CharacterSchema.json",
+    "$schema": "../dist/CharacterSchema.json",
     "name": "Dave",
     "class": "Rogue",
+    "alignment": "Chaotic Good",
     "level": 12,
     "expertises": [
         "Stealth",

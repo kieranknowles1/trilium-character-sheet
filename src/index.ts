@@ -11,7 +11,8 @@ type Optional<T> = T | undefined
 function isNotNull<T>(name: string, value: Optional<T>): value is T {
     const isNull = value === null || value === undefined
     if (isNull) {
-        api.$container.append(`<div>${name} is not set</div>`)
+        api.$container.append(`<div style="color: red">${name} is not set</div>`)
+        $('#missing-field').css('display', 'block')
     }
     return !isNull
 }
@@ -31,6 +32,7 @@ type Attribute = keyof Attributes
 interface Character {
     $schema: string,
     name: string,
+    alignment: string,
     class: string,
     level: number,
     attributes: Attributes,
@@ -95,9 +97,13 @@ function displaySkills(level: number, proficiencies: Skill[], expertises: Skill[
         if (isProficient) bonus += proficiencyBonus
         if (isExpertise) bonus += proficiencyBonus
 
+        var proficiency = ''
+        if (isProficient) proficiency += ' *'
+        else if (isExpertise) proficiency += ' **'
+
         table.append(`
             <tr>
-                <td>${skill} (${attribute.substring(0, 3)})</td>
+                <td>${skill} (${attribute.substring(0, 3)}${proficiency})</td>
                 <td>${bonus}</td>
             </tr>
         `)
@@ -136,6 +142,7 @@ async function render(): Promise<void> {
         $('#class').text(json.class).attr('href', wikiUrl)
     }
     displayValue('#level', json.level)
+    displayValue('#alignment', json.alignment)
 
     if (isNotNull('attributes', json.attributes)) {
         displayAttribute('#strength', json.attributes.strength)

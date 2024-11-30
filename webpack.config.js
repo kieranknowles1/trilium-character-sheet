@@ -1,3 +1,4 @@
+// TODO: Webpack is quite slow, could we use something else?
 module.exports = {
     entry: "./src/index.ts",
     module: {
