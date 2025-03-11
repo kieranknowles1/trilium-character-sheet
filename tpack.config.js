@@ -34,7 +34,7 @@ module.exports = {
                     {
                         // This script is executed when opening the note
                         title: "index.js",
-                        file: "dist/character-sheet.umd.js",
+                        file: "dist/character-sheet.js",
                         env: "frontend",
                     }
                 ]
