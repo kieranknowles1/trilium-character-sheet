@@ -1,13 +1,15 @@
-import { Character as DndCharacter } from "./dnd/data"
+import { CthuluCharacter } from "./cthulu/data"
+import { DndCharacter } from "./dnd/data"
 
 export type Optional<T> = T | undefined
 
 export type CharacterBase = {
+    $schema: string,
     type: string,
     name: string,
 }
 
-export type AnyCharacter = DndCharacter
+export type AnyCharacter = CharacterBase & (DndCharacter | CthuluCharacter)
 
 export function error(msg: string) {
     api.$container.append(`<div style="color: red">${msg}</div>`)

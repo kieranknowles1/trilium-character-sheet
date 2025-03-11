@@ -1,7 +1,7 @@
 import {
     type Attribute,
     type Attributes,
-    Character,
+    DndCharacter,
     SKILL_ATTRIBUTES,
     type Skill,
 } from './data.ts'
@@ -11,7 +11,10 @@ import {
     nullCheck,
     isNotNull,
     displayValue,
+    CharacterBase,
 } from '../util.ts'
+
+export type FinalCharacter = DndCharacter & CharacterBase
 
 function getAttributeModifier(value: number): number {
     // +1 for every 2 points above 10, -1 for every 2 points below 10, rounded down
@@ -82,7 +85,7 @@ function displaySkills(level: number, proficiencies: Skill[], expertises: Skill[
     }
 }
 
-export function renderDnd(json: Partial<Character>) {
+export function renderDnd(json: Partial<FinalCharacter>) {
     displayValue('#name', json.name)
     if (isNotNull('class', json.class)) {
         // Wikidot can be slow, but the site that shall not be named is ad infested

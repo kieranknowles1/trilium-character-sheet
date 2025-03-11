@@ -31,11 +31,9 @@ export interface Attributes {
 }
 export type Attribute = keyof Attributes
 
-export interface Character {
-    $schema: string,
+export interface DndCharacter {
     type: 'dnd',
 
-    name: string,
     alignment: string,
     class: string,
     level: number,
