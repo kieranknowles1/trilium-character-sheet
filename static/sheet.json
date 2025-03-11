@@ -1,3 +1,4 @@
 {
-    "$schema": "../build/CharacterSchema.json"
+    "$schema": "../build/CharacterSchema.json",
+    "type": "dnd"
 }

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "This is a repository based on my [NixOS Configuration](https://github.com/kieranknowles1/nixcfg).",
   "scripts": {
-    "schemas": "typescript-json-schema --required --noExtraProps --defaultNumberType integer tsconfig.json Character > build/CharacterSchema.json",
+    "schemas": "typescript-json-schema --required --noExtraProps --defaultNumberType integer tsconfig.json AnyCharacter > build/CharacterSchema.json",
     "build": "vite build",
     "pack": "npm run schemas && npm run build && tpack"
   },
