@@ -1,10 +1,8 @@
-function createRenderNote(title, src, isTemplate) {
+function createRenderNote(title, src, extraAttrs) {
     var attributes = {
         "~renderNote": "static/index.html",
-        "#iconClass": "bx bx-face"
-    }
-    if (isTemplate) {
-        attributes["#template"] = ""
+        "#iconClass": "bx bx-face",
+        ...extraAttrs
     }
 
     return {
@@ -43,8 +41,9 @@ module.exports = {
                 title: "Schema",
                 file: "build/CharacterSchema.json",
             },
-            createRenderNote("Character Sheet", "static/sheet.json", true),
-            createRenderNote("Demo", "static/demo.json", false),
+            createRenderNote("Character Sheet", "static/sheet.json", {"#template": ""}),
+            createRenderNote("Demo - DND", "static/demo-dnd.json", {}),
+            createRenderNote("Demo - Call of Cthulu", "static/demo-cthulu.json", {})
         ]
     }
 }

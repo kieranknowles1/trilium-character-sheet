@@ -1,0 +1,5 @@
+{
+    "$schema": "../build/CharacterSchema.json",
+    "type": "cthulu",
+    "name": "Winston"
+}
