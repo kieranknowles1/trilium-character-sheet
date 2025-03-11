@@ -1,29 +1,29 @@
 {
-    "$schema": "../build/CharacterSchema.json",
-    "type": "dnd",
-    "name": "Dave",
-    "class": "Rogue",
-    "alignment": "Chaotic Good",
-    "level": 12,
-    "expertises": [
-        "Stealth",
-        "Sleight of Hand",
-        "Acrobatics"
-    ],
-    "proficiencies": [
-        "Persuasion",
-        "Deception"
-    ],
-    "saveProficiencies": [
-        "dexterity",
-        "intelligence"
-    ],
-    "attributes": {
-        "strength": 10,
-        "dexterity": 18,
-        "constitution": 14,
-        "intelligence": 13,
-        "wisdom": 9,
-        "charisma": 16
-    }
+  "$schema": "../build/CharacterSchema.json",
+  "type": "dnd",
+  "name": "Dave",
+  "class": "Rogue",
+  "alignment": "Chaotic Good",
+  "level": 12,
+  "expertises": [
+    "Stealth",
+    "Sleight of Hand",
+    "Acrobatics"
+  ],
+  "proficiencies": [
+    "Persuasion",
+    "Deception"
+  ],
+  "saveProficiencies": [
+    "dexterity",
+    "intelligence"
+  ],
+  "attributes": {
+    "strength": 10,
+    "dexterity": 18,
+    "constitution": 14,
+    "intelligence": 13,
+    "wisdom": 9,
+    "charisma": 16
+  }
 }

@@ -1,11 +1,11 @@
 {
-    "include": ["src/**/*.ts"],
-    "compilerOptions": {
-        "module": "CommonJS",
-        "esModuleInterop": true,
-        "target": "ESNext",
-        "strictNullChecks": true,
-        "noEmit": true,
-        "allowImportingTsExtensions": true,
-    }
+  "include": ["src/**/*.ts"],
+  "compilerOptions": {
+    "module": "CommonJS",
+    "esModuleInterop": true,
+    "target": "ESNext",
+    "strictNullChecks": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true
+  }
 }
