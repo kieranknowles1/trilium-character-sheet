@@ -1,5 +1,19 @@
 {
     "$schema": "../build/CharacterSchema.json",
     "type": "cthulu",
-    "name": "Winston"
+    "name": "Winston",
+    "age": 35,
+    "birthplace": "London",
+    "residence": "Arkham",
+    "occupation": "Nurse",
+    "characteristics": {
+        "Strength": 50,
+        "Constitution": 60,
+        "Dexterity": 30,
+        "Intelligence": 70,
+        "Size": 65,
+        "Power": 45,
+        "Appearance": 40,
+        "Education": 80
+    }
 }
