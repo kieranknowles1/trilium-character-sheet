@@ -14,8 +14,14 @@ async function render(): Promise<void> {
     const json: Partial<AnyCharacter> = JSON.parse(data)
 
     switch (json.type) {
-        case 'cthulu': renderCthulu(json); break
-        case 'dnd': renderDnd(json); break
+        case 'cthulu':
+            $('.dnd-only').hide()
+            renderCthulu(json);
+            break
+        case 'dnd':
+            $('.cthulu-only').hide()
+            renderDnd(json);
+            break
         default: error(`Unknown character type '${json.type}'`)
     }
 }

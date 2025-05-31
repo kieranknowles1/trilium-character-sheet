@@ -38,8 +38,9 @@ function getBaseMove(attrs: Characteristics): number {
 
 export function renderCthulu(json: Partial<CthuluCharacter>) {
     if (isNotNull("characteristics", json.characteristics)) {
+        const attrsTable = $('#characteristics')
         for (const attr of Object.keys(json.characteristics)) {
-            error(skillRow(attr, json[attr]))
+            attrsTable.append(skillRow(attr, json.characteristics[attr]))
         }
 
         const [damageBonus, build] = calculateDamageBonus(json.characteristics)

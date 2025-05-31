@@ -86,7 +86,6 @@ function displaySkills(level: number, proficiencies: Skill[], expertises: Skill[
 }
 
 export function renderDnd(json: Partial<FinalCharacter>) {
-    displayValue('#name', json.name)
     if (isNotNull('class', json.class)) {
         // Wikidot can be slow, but the site that shall not be named is ad infested
         const wikiUrl = `https://dnd5e.wikidot.com/${json.class.toLowerCase()}`
