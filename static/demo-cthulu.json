@@ -24,5 +24,18 @@
         "Power": 45,
         "Appearance": 40,
         "Education": 80
+    },
+    "skills": {
+        "Credit Rating": 25,
+        "Firearms (Handgun)": 20,
+        "First Aid": 75,
+        "Library Use": 40,
+        "Listen": 45,
+        "Medicine": 50,
+        "Persuade": 55,
+        "Psychology": 50,
+        "Biology": 40,
+        "Chemistry": 5,
+        "Spot Hidden": 60
     }
 }

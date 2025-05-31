@@ -1,5 +1,5 @@
 import { displayValue, error, isNotNull } from "../util";
-import { Characteristics, CthuluCharacter } from "./data";
+import { BASE_SKILLS, Characteristics, CthuluCharacter } from "./data";
 
 function skillRow(name: string, value: number): string {
     const half = Math.floor(value / 2)
@@ -36,6 +36,10 @@ function getBaseMove(attrs: Characteristics): number {
     return 8
 }
 
+function getSkillValue(name: string, attrs: Characteristics, skills: Record<string, number>) {
+
+}
+
 export function renderCthulu(json: Partial<CthuluCharacter>) {
     if (isNotNull("characteristics", json.characteristics)) {
         const attrsTable = $('#characteristics')
@@ -53,8 +57,17 @@ export function renderCthulu(json: Partial<CthuluCharacter>) {
         displayValue('#damage-bonus', damageBonus)
     }
     if (isNotNull("skills", json.skills)) {
-        for (const skill of Object.keys(json.skills)) {
-            error(skillRow(skill, json[skill]))
+        // Priority is given top to bottom
+        const allSkills = {
+            Dodge: (json.characteristics?.Dexterity ?? 0 / 2),
+            'Language (own)': json.characteristics?.Education,
+            ...BASE_SKILLS,
+            ...json.skills
+        }
+
+        const skillTable = $('#skills')
+        for (const skill of Object.keys(allSkills).sort()) {
+            skillTable.append(skillRow(skill, allSkills[skill]))
         }
     }
 
