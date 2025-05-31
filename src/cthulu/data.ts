@@ -15,6 +15,15 @@ export interface CthuluCharacter {
     occupation: string,
     residence: string,
     age: number,
+    sanity: {
+        starting: number,
+        current: number
+        insane: 'none' | 'temporary' | 'indefinite'
+    },
+    luck: {
+        starting: number,
+        current: number,
+    }
 
     characteristics: Characteristics,
     skills: Record<string, number>,

@@ -6,6 +6,15 @@
     "birthplace": "London",
     "residence": "Arkham",
     "occupation": "Nurse",
+    "luck": {
+        "starting": 75,
+        "current": 54
+    },
+    "sanity": {
+        "starting": 54,
+        "current": 34,
+        "insane": "indefinite"
+    },
     "characteristics": {
         "Strength": 50,
         "Constitution": 60,

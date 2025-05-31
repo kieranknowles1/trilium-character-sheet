@@ -1,4 +1,4 @@
-import { error, isNotNull } from "../util";
+import { displayValue, error, isNotNull } from "../util";
 import { Characteristics, CthuluCharacter } from "./data";
 
 function skillRow(name: string, value: number): string {
@@ -47,7 +47,10 @@ export function renderCthulu(json: Partial<CthuluCharacter>) {
         const health = calculateHealth(json.characteristics)
         const move = getBaseMove(json.characteristics) + getAgeMoveModifier(json.age ?? 20)
 
-        error(damageBonus); error(build.toString()); error(health.toString()); error(move.toString())
+        displayValue('#health', health)
+        displayValue('#move', move)
+        displayValue('#build', build)
+        displayValue('#damage-bonus', damageBonus)
     }
     if (isNotNull("skills", json.skills)) {
         for (const skill of Object.keys(json.skills)) {
@@ -55,5 +58,21 @@ export function renderCthulu(json: Partial<CthuluCharacter>) {
         }
     }
 
-    error('Not yet implemented')
+    if (isNotNull("sanity", json.sanity)) {
+        $('#sanity-start').text(json.sanity.starting)
+        $('#sanity-current').text(json.sanity.current)
+        const insane = Math.ceil(json.sanity.starting * 0.8)
+        $('#sanity-insane').text(insane)
+
+        switch (json.sanity.insane) {
+            case 'indefinite': $('#insane').text('Indefinite insanity'); break
+            case 'temporary': $('#insane').text('Temporary insanity'); break
+            default: break
+        }
+    }
+
+    if (isNotNull("luck", json.luck)) {
+        $('#luck-start').text(json.luck.starting)
+        $('#luck-current').text(json.luck.current)
+    }
 }
